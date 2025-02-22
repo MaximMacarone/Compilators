@@ -1,0 +1,48 @@
+@startuml
+[*] --> initView
+initView --> North : north
+initView --> East : east
+initView --> West : west
+initView --> South : south
+initView --> Error : any other
+initView --> [*] : EOF
+
+North --> Nendl : forward
+North --> Eendl : right
+North --> Wendl : left
+
+Nendl --> North : endl
+Eendl --> East : endl
+Wendl --> West : endl
+Sendl --> South : endl
+North --> [*] : EOF
+
+
+East --> Eendl : forward
+East --> Nendl : left
+East --> Sendl : right
+East --> [*] : EOF
+
+
+West --> Wendl : forward
+West --> Nendl : right
+West --> Sendl : left
+West --> [*] : EOF
+
+
+South --> Sendl : forward
+South --> Wendl : right
+South --> Eendl : left
+South --> [*] : EOF
+
+
+North --> Error : Any simbol not from alphabet
+West --> Error : Any simbol not from alphabet
+East --> Error : Any simbol not from alphabet
+South --> Error : Any simbol not from alphabet
+
+Sendl --> Error : if not endl
+Eendl --> Error : if not endl
+Nendl --> Error : if not endl
+Wendl --> Error : if not endl
+@enduml
