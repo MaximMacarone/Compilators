@@ -1,0 +1,34 @@
+digraph LexerFSM {
+    rankdir=LR;
+    node [shape=circle];
+    
+    AREA [label="AREA"];
+    STRING [label="STRING"];
+    DELIM [label="DELIM"];
+    
+    ERR [label="ERR", shape=doublecircle];
+    END [label="EOF", shape=doublecircle];
+    
+
+    
+    STRING -> STRING [label="letter"];
+    STRING -> AREA [label="digit"];
+    STRING -> DELIM [label="{}:,"];
+    STRING -> ERR [label="NA"];
+    
+    AREA -> AREA [label="digit"];
+    AREA -> STRING [label="letter"];
+    AREA -> DELIM [label="{}:,"];
+    AREA -> ERR [label="NA"];
+    
+    DELIM -> STRING [label = "letter"];
+    DELIM -> DELIM [label="{}:,"];
+    DELIM -> AREA [label="digit"];
+    DELIM -> DELIM [label="whitespace \\n"];
+    DELIM -> ERR [label="NA"];
+
+    DELIM -> END [label="EOF"];
+    AREA -> END [label="EOF"];
+    STRING -> END [label="EOF"];
+}
+

@@ -1,0 +1,19 @@
+country Russia: 10 {
+    city Moscow: 5 {
+        dist SAO: 1,
+        dist ZAO: 1,
+        dist SZAO: 2,
+        dist UAO: 1
+    },
+    city Piter: 3 {
+        dist Vasileostrovsky: 1,
+        dist Centralny: 1,
+        dist Primorsky: 1
+    },
+    city Kazan: 2 {
+        dist Vakhitovsky: 1,
+        dist Sovetsky: 1
+    }
+}
+
+
