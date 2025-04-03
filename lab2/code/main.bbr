@@ -10,4 +10,8 @@ country Russia: 10 {
         dist Centralny: 1,
         dist Primorsky: 1
     },
+    city Kazan: 2 {
+        dist Vakhitovsky: 1,
+        dist Sovetsky: 1
+    }
 }
