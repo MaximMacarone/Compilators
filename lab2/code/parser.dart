@@ -2,8 +2,8 @@ import 'lexer.dart';
 
 class Node {
   final String type;
-  String name; // Изменяем value на name
-  String area; // Добавляем отдельное поле для площади
+  String name;
+  String area;
   final List<Node> children = [];
 
   Node(this.type, this.name, [this.area = '']);
@@ -84,7 +84,6 @@ class Parser {
 
     Node countryNode = Node('COUNTRY', countryName, countryArea);
 
-    // Обрабатываем список городов
     bool firstCity = true;
     while (currentToken.type != 'END' && currentToken.type != 'EOF') {
       if (!firstCity) {
@@ -143,7 +142,6 @@ class Parser {
 
     Node cityNode = Node('CITY', cityName, cityArea);
 
-    // Обрабатываем список районов
     bool firstDistrict = true;
     while (currentToken.type != 'END' && currentToken.type != 'EOF') {
       if (!firstDistrict) {
