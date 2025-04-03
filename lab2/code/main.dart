@@ -4,7 +4,7 @@ import 'lexer.dart';
 import 'parser.dart';
 
 void main() {
-  String input = File("main.bbr").readAsStringSync();
+  String input = File("lab2/code/main.bbr").readAsStringSync();
   Lexer lexer = Lexer(input);
   List<Token> tokens = [];
   Token token;
